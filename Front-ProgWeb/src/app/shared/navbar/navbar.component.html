@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']">Agricultura Responsable</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+            </button>
+            <i class="nc-icon nc-world-2"></i>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Home" [routerLink]="['/home']" data-placement="bottom" >
+                        <i class="nc-icon nc-shop "></i>
+                        <p class="d-lg-none">Home</p>
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Tienda" data-placement="bottom" href="">
+                        <i class="nc-icon nc-cart-simple"></i>
+                        <p class="d-lg-none">Shop</p>
+                        Tienda
+                    </a>
+                </li>
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Contáctenos" data-placement="bottom" [routerLink]="['/contact-us']">
+                        <i class="nc-icon nc-chat-33"></i>
+                        <p class="d-lg-none">Contact us</p>
+                        Contáctenos
+                    </a>
+                </li>
+
+                <li class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left">
+                    <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-single-02" aria-hidden="true"></i></a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">
+                            <a class="dropdown-header">Bienvenido de nuevo</a>
+                            <a class="dropdown-item">Mi cuenta</a>
+                            <a class="dropdown-item">Mis compras</a>
+                            <a class="dropdown-item">Favoritos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
