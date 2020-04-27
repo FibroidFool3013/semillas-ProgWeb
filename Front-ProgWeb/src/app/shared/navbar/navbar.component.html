@@ -20,7 +20,7 @@
                 </li>
 
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Tienda" data-placement="bottom" href="">
+                    <a class="nav-link" rel="tooltip" title="Tienda" data-placement="bottom" [routerLink]="['/shop']">
                         <i class="nc-icon nc-cart-simple"></i>
                         <p class="d-lg-none">Shop</p>
                         Tienda

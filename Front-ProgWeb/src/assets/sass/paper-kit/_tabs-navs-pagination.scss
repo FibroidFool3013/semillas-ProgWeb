@@ -120,6 +120,8 @@
 /*             Navigation Pills               */
 
 .nav-pills {
+    display: flex;
+    justify-content: center!important;
     .nav-item + .nav-link {
         margin-left: 0;
     }
