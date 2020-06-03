@@ -1,24 +1,28 @@
 import {Component, Input} from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { SemillasService } from './../../services/semillas.service';
 
 @Component({
     selector: 'app-modal-content',
     template: `
     <div class="modal-header">
-        <h5 class="modal-title text-center">Modal title</h5>
+        <h5 class="modal-title text-center">Producto agregado</h5>
         <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body"> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+    <div class="modal-body">
+        El producto ha sido agregado exitosamente al carrito!
+        ¿Qué desea hacer ahora?
     </div>
+    <div></div>
     <div class="modal-footer">
         <div class="left-side">
-            <button type="button" class="btn btn-default btn-link" (click)="activeModal.close('Close click')">Never mind</button>
+            <button type="button" class="btn btn-default btn-link" (click)="activeModal.close('Close click')">Seguir comprando</button>
         </div>
         <div class="divider"></div>
         <div class="right-side">
-            <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">DELETE</button>
+            <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">ir al carrito</button>
         </div>
     </div>
     `

@@ -17,13 +17,13 @@
         <div class="card page-carousel carousel slide my-4" data-ride="carousel">
             <ngb-carousel>
                 <ng-template ngbSlide>
-                    <img src="./assets/img/semillas-carrusel/germinacion.jpg" alt="Random first slide">
+                    <img src="./assets/img/semillas-carrusel/seeds-hands.jpg" alt="Random first slide">
                     <div class="carousel-caption">
                         <p>Crecimiento</p>
                     </div>
                 </ng-template>
                 <ng-template ngbSlide>
-                    <img src="./assets/img/semillas-carrusel/seeds-hands.jpg" alt="Random second slide">
+                    <img src="./assets/img/semillas-carrusel/germinacion.jpg" alt="Random second slide">
                     <div class="carousel-caption">
                         <p>Agricultura</p>
                     </div>
@@ -47,24 +47,41 @@
           <ngb-tab title="Para el Hogar">
             <ng-template ngbTabContent>
               <h1>Hogar</h1>
-              <app-productos></app-productos>
+                <div class="row my-5">
+                  <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+                </div>
             </ng-template>
           </ngb-tab>
+
           <ngb-tab title="Para tu empresa">
           <ng-template ngbTabContent>
             <h1>Empresas</h1>
-            <app-productos></app-productos>
+            <div class="row my-5">
+              <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+            </div>
           </ng-template>
           </ngb-tab>
+
           <ngb-tab title="Para el campo">
             <ng-template ngbTabContent>
               <h1>Campo</h1>
-              <app-productos></app-productos>
+              <div class="row my-5">
+                <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+              </div>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
+        
+        <button (click)="getAllProducts()" class="btn btn-danger btn-round" type="button">Get all semillas</button>
+        <button (click)="getProducto()" class="btn btn-danger btn-round" type="button">Get a semilla</button>
+        <button (click)="getProductosSize()" class="btn btn-danger btn-round" type="button">Get Array</button>
+
+
 
       </div>
     </div>
+  </div>
+  <div>
+    <cart-view></cart-view>
   </div>
 </div>  
