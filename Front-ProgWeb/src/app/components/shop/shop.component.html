@@ -1,0 +1,84 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/header-shop.jpg');">
+    <div class="filter"></div>
+    <div class="content-center">
+      <div class="container">
+          <div class="title-brand">
+              <h1 class="presentation-title-sites">WorldGreen Shop</h1>
+          </div>
+      </div>
+  </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <div class="my-4 col-md-offset-5">
+
+        <div class="card page-carousel carousel slide my-4" data-ride="carousel">
+            <ngb-carousel>
+                <ng-template ngbSlide>
+                    <img src="./assets/img/semillas-carrusel/seeds-hands.jpg" alt="Random first slide">
+                    <div class="carousel-caption">
+                        <p>Crecimiento</p>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <img src="./assets/img/semillas-carrusel/germinacion.jpg" alt="Random second slide">
+                    <div class="carousel-caption">
+                        <p>Agricultura</p>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <img src="./assets/img/semillas-carrusel/Semillasgerminando.jpg" alt="Random third slide">
+                    <div class="carousel-caption">
+                        <p>Germinación</p>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <img src="./assets/img/semillas-carrusel/semillas.jpg" alt="Random fourth slide">
+                    <div class="carousel-caption">
+                        <p>Semillas</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+
+        <ngb-tabset type="pills" class="nav-pills-danger" aria-orientation="horizontal">
+          <ngb-tab title="Para el Hogar">
+            <ng-template ngbTabContent>
+              <h1>Hogar</h1>
+                <div class="row my-5">
+                  <app-productos *ngFor="let producto of productos1" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+                </div>
+            </ng-template>
+          </ngb-tab>
+
+          <ngb-tab title="Para tu empresa">
+          <ng-template ngbTabContent>
+            <h1>Empresas</h1>
+            <div class="row my-5">
+              <app-productos *ngFor="let producto of productos2" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+            </div>
+          </ng-template>
+          </ngb-tab>
+
+          <ngb-tab title="Para el campo">
+            <ng-template ngbTabContent>
+              <h1>Campo</h1>
+              <div class="row my-5">
+                <app-productos *ngFor="let producto of productos3" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+        
+        <!-- 
+        <button (click)="getAllProducts()" class="btn btn-danger btn-round" type="button">Get all semillas</button>
+        <button (click)="getProducto()" class="btn btn-danger btn-round" type="button">Get a semilla</button>
+        <button (click)="getProductosSize()" class="btn btn-danger btn-round" type="button">Get Array</button>
+        -->
+        
+      </div>
+    </div>
+  </div>
+</div>  

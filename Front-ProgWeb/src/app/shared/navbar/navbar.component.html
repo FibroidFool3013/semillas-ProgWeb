@@ -20,7 +20,7 @@
                 </li>
 
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Tienda" data-placement="bottom" href="">
+                    <a class="nav-link" rel="tooltip" title="Tienda" data-placement="bottom" [routerLink]="['/shop']">
                         <i class="nc-icon nc-cart-simple"></i>
                         <p class="d-lg-none">Shop</p>
                         Tienda
@@ -35,6 +35,20 @@
                     </a>
                 </li>
 
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <app-modal-component></app-modal-component>
+                </li>
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link btn btn-success btn-round" rel="tooltip" title="Contáctenos" data-placement="bottom" [routerLink]="['/signup']">
+                        <i class="nc-icon nc-lock-circle-open"></i>
+                        <p class="d-lg-none">Sign In</p>
+                        Sign In
+                    </a>
+                </li>
+                
+                
+                <!-- acá debería hacer el if sí el usuario se encuentra logeado
                 <li class="nav-item ">
                     <div ngbDropdown class="dropdown" placement="bottom-left">
                     <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-single-02" aria-hidden="true"></i></a>
@@ -48,6 +62,7 @@
                         </div>
                     </div>
                 </li>
+                -->
             </ul>
         </div>
     </div>

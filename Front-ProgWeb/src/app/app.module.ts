@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -14,7 +15,14 @@ import { ExamplesModule } from './examples/examples.module';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SignupComponent } from './components/signup/signup.component';
-
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { NgbdModalComponent } from './components/modal/modal.component';
+import { NgbdModalContent } from './components/modal/modal.component';
+import { ShoppingCartModule } from 'ng-shopping-cart';
+import { StoreModule } from '@ngrx/store';
+ 
 
 @NgModule({
   declarations: [
@@ -23,7 +31,12 @@ import { SignupComponent } from './components/signup/signup.component';
     FooterComponent,
     ContactUsComponent,
     RegisterComponent,
-    SignupComponent
+    SignupComponent,
+    ShopComponent,
+    ProductosComponent,
+    CarritoComponent,
+    NgbdModalComponent,
+    NgbdModalContent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +46,18 @@ import { SignupComponent } from './components/signup/signup.component';
     ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
+    HttpClientModule,
+    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
+      serviceType: 'localStorage',
+      serviceOptions: {
+        storageKey: 'NgShoppingCart',
+        clearOnError: true
+      }
+    }),
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
+  entryComponents: [NgbdModalContent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

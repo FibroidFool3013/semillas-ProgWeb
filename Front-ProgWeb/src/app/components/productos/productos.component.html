@@ -1,0 +1,16 @@
+
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="#">{{ product.nombreProducto }}</a>
+      </h4>
+      <h5>{{ product.precio | currency }}</h5>
+      <p class="card-text">{{ product.descripcion }}</p>
+    </div>
+    <div class="card-footer">
+      <add-to-cart [item]="item" [custom]="true">
+        <button type="button" class="btn btn-danger btn-round" (click)="agregarAlCarrito()">Add item</button>
+     </add-to-cart>
+    </div>
+  </div>
