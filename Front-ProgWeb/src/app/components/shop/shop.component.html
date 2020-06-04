@@ -48,7 +48,7 @@
             <ng-template ngbTabContent>
               <h1>Hogar</h1>
                 <div class="row my-5">
-                  <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+                  <app-productos *ngFor="let producto of productos1" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
                 </div>
             </ng-template>
           </ngb-tab>
@@ -57,7 +57,7 @@
           <ng-template ngbTabContent>
             <h1>Empresas</h1>
             <div class="row my-5">
-              <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+              <app-productos *ngFor="let producto of productos2" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
             </div>
           </ng-template>
           </ngb-tab>
@@ -66,22 +66,19 @@
             <ng-template ngbTabContent>
               <h1>Campo</h1>
               <div class="row my-5">
-                <app-productos *ngFor="let producto of productos" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
+                <app-productos *ngFor="let producto of productos3" [product]="producto" class="col-lg-4 col-md-6 mb-4"></app-productos>
               </div>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
         
+        <!-- 
         <button (click)="getAllProducts()" class="btn btn-danger btn-round" type="button">Get all semillas</button>
         <button (click)="getProducto()" class="btn btn-danger btn-round" type="button">Get a semilla</button>
         <button (click)="getProductosSize()" class="btn btn-danger btn-round" type="button">Get Array</button>
-
-
-
+        -->
+        
       </div>
     </div>
-  </div>
-  <div>
-    <cart-view></cart-view>
   </div>
 </div>  

@@ -36,12 +36,18 @@
                 </li>
 
                 <li class="nav-item" *ngIf="!isDocumentation()">
+                    <app-modal-component></app-modal-component>
+                </li>
+
+                <li class="nav-item" *ngIf="!isDocumentation()">
                     <a class="nav-link btn btn-success btn-round" rel="tooltip" title="Contáctenos" data-placement="bottom" [routerLink]="['/signup']">
                         <i class="nc-icon nc-lock-circle-open"></i>
                         <p class="d-lg-none">Sign In</p>
                         Sign In
                     </a>
                 </li>
+                
+                
                 <!-- acá debería hacer el if sí el usuario se encuentra logeado
                 <li class="nav-item ">
                     <div ngbDropdown class="dropdown" placement="bottom-left">

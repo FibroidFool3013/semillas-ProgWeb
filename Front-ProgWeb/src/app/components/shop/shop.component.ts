@@ -10,48 +10,51 @@ import { Producto } from 'app/interfaces/producto';
 })
 export class ShopComponent implements OnInit {
 
-  productos = [];
-  json = "";
+  productos1 = [];
+  productos2 = [];
+  productos3 = [];
 
   constructor( private _productoService: ProductoService) {
     //this.getAllProducts();
   } 
 
   ngOnInit(): void {
-    this._productoService.getAllProductos().subscribe(
+    this._productoService.getProductosCategory('1').subscribe(
       result =>{
-      this.productos = result;
+      this.productos1 = result;
     }, error => {
       console.log(<any>error);
     }
+    );
+    this._productoService.getProductosCategory('2').subscribe(
+      result =>{
+        this.productos2 = result;
+      }, error => {
+        console.log(<any>error);
+      }
+    );
+    this._productoService.getProductosCategory('3').subscribe(
+      result =>{
+        this.productos3 = result;
+      }, error => {
+        console.log(<any>error);
+      }
     );
   }
 
   getAllProducts(){
-    this._productoService.getAllProductos().subscribe(
-      result =>{
-      this.json = JSON.stringify(result);
-    }, error => {
-      console.log(<any>error);
-    }
-    );
-
-    //var data = JSON.parse(this.json)
-    //console.log(data);
-    
-    console.log(this.productos);
-    console.log(this.productos);
+    console.log(this.productos1);
   }
 
   getProductosSize(){
-    this._productoService.getAllProductos().subscribe(productos =>{
-      console.log(productos.length);
+    this._productoService.getAllProductos().subscribe(result =>{
+      console.log(result.length);
   });
   }
 
   getProducto(){
-    this._productoService.getProducto('3').subscribe(productos =>{
-        console.log(productos);
+    this._productoService.getProducto('3').subscribe(result =>{
+        console.log(result);
     });
   }
 
