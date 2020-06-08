@@ -22,6 +22,8 @@ import { NgbdModalComponent } from './components/modal/modal.component';
 import { NgbdModalContent } from './components/modal/modal.component';
 import { ShoppingCartModule } from 'ng-shopping-cart';
 import { StoreModule } from '@ngrx/store';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
  
 
 @NgModule({
@@ -36,7 +38,9 @@ import { StoreModule } from '@ngrx/store';
     ProductosComponent,
     CarritoComponent,
     NgbdModalComponent,
-    NgbdModalContent
+    NgbdModalContent,
+    ProductDetailComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,4 +6,5 @@ export interface Producto {
     seccion_id: number;
     created_at: string;
     updated_at: string;
+    imagen: string;
 }
