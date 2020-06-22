@@ -3,7 +3,7 @@
     <a href="javascript.void(0);" (click)="clickDataService()" [routerLink]="['/detail']"><img class="card-img-top" src="{{ product.imagen }}" alt=""></a>
     <div class="card-body">
       <h4 class="card-title">
-        <a href="#">{{ product.nombreProducto }}</a>
+        <a href="javascript.void(0);" (click)="clickDataService()" [routerLink]="['/detail']">{{ product.nombreProducto }}</a>
       </h4>
       <h5>{{ product.precio | currency }}</h5>
       <p class="card-text">{{ product.descripcion }}</p>
@@ -12,9 +12,5 @@
       <add-to-cart [item]="item" [custom]="true">
         <button type="button" class="btn btn-danger btn-round" (click)="agregarAlCarrito()">Agregar al carrito</button>
      </add-to-cart>
-     <!--
-     <button type="button" class="btn btn-danger btn-round" [routerLink]="['/detail']">
-     </button>
-     -->
     </div>
   </div>

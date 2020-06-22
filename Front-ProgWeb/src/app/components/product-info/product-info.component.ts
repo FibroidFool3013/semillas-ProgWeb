@@ -18,7 +18,6 @@ export class ProductInfoComponent implements OnInit {
 
   agregarAlCarrito(){
     console.log(this.product.id);
-    this.item = this._cartService.getItem(this.product.id);
     console.log(this._cartService.getItem(this.product.id));
   }
 
