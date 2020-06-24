@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -22,6 +22,9 @@ import { NgbdModalComponent } from './components/modal/modal.component';
 import { NgbdModalContent } from './components/modal/modal.component';
 import { ShoppingCartModule } from 'ng-shopping-cart';
 import { StoreModule } from '@ngrx/store';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
  
 
 @NgModule({
@@ -36,12 +39,16 @@ import { StoreModule } from '@ngrx/store';
     ProductosComponent,
     CarritoComponent,
     NgbdModalComponent,
-    NgbdModalContent
+    NgbdModalContent,
+    ProductDetailComponent,
+    ProductInfoComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     ComponentsModule,
     ExamplesModule,

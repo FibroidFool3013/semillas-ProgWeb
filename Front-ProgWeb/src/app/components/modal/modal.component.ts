@@ -20,7 +20,7 @@ import { SemillasService } from './../../services/semillas.service';
         </div>
         <div class="divider"></div>
         <div class="right-side">
-            <button type="button" class="btn btn-danger btn-link" [routerLink]="['/home']" (click)="activeModal.close('Close click')" >Ir a pagar</button>
+            <button type="button" class="btn btn-danger btn-link" [routerLink]="['/checkout']" (click)="activeModal.close('Close click')" >Ir a pagar</button>
         </div>
     </div>
     `
