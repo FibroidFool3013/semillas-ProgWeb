@@ -1,0 +1,84 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('https://imagenes-proyecto-semillas.s3.amazonaws.com/img/checkout.jpg');">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                    <h1 class="presentation-title-sites">WorldGreen Checkout</h1>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="container">
+            <div class="row">
+                <!-- <div class=" mr-auto ml-auto"> -->
+                    <div class="col-sm-4">
+                        <div class="card card-user-cart">
+                            <div class="card-body">
+                              <h5 class="card-title">Información de facturación</h5>
+                                <form class="checkout-align card-text was-validated">
+                                    <div class="form-group">
+                                        <label for="uname">Nombre:</label>
+                                        <input type="text" class="form-control" id="uname" placeholder="Ingrese el nombre" name="uname" required>
+                                        <div class="valid-feedback">ok.</div>
+                                        <div class="invalid-feedback">El campo no puede estar vacío</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="lastname">Apellido:</label>
+                                        <input type="text" class="form-control" id="lastname" placeholder="Ingrese el apellido" name="lastname" required>
+                                        <div class="valid-feedback">ok.</div>
+                                        <div class="invalid-feedback">El campo no puede estar vacío</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for ="email">Email:</label>
+                                            <input type="text" class="form-control" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email"name="email" ngModel #emailref="ngModel" required>
+                                            <div class="invalid-feedback"></div>
+                                            <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class ="alert alert-danger">
+                                            <div [hidden]="!emailref.errors?.pattern">
+                                                Ingrese un correo valido
+                                            </div> 
+                                            </div> 
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputAddress">Dirección:</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="inputAddress" required>
+                                        <div class="valid-feedback">ok.</div>
+                                        <div class="invalid-feedback">El campo no puede estar vacío</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputCity">Ciudad:</label>
+                                        <input type="text" class="form-control" id="inputCity" placeholder="Ciudad" name="inputCity" required>
+                                        <div class="valid-feedback">ok.</div>
+                                        <div class="invalid-feedback">El campo no puede estar vacío</div>
+                                    </div>
+
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" name="remember" required> Acepto los T&C.
+                                          <span class="form-check-sign"></span>
+                                          <div class="valid-feedback">ok.</div>
+                                          <div class="invalid-feedback">Campo obligatorio</div>
+                                        </label>
+                                      </div>
+                                </form>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card card-cart">
+                            <h5 class="card-title" style="text-align: center;">Información de compra</h5>
+                            <div class="col-4">
+                            <cart-view [display]="'responsive'"></cart-view>
+                            </div>
+                            <cart-checkout style="display: inline-block; text-align: center;" [service]="'paypal'" settings="settings"></cart-checkout>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+<div>

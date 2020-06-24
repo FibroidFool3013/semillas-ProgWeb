@@ -1,0 +1,16 @@
+
+  <div class="card h-100">
+    <a href="javascript.void(0);" (click)="clickDataService()" [routerLink]="['/detail']"><img class="card-img-top" src="{{ product.imagen }}" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="javascript.void(0);" (click)="clickDataService()" [routerLink]="['/detail']">{{ product.nombreProducto }}</a>
+      </h4>
+      <h5>{{ product.precio | currency }}</h5>
+      <p class="card-text">{{ product.descripcion }}</p>
+    </div>
+    <div class="card-footer" style="text-align: center;">
+      <add-to-cart [item]="item" [custom]="true">
+        <button type="button" class="btn btn-danger btn-round" (click)="agregarAlCarrito()">Agregar al carrito</button>
+     </add-to-cart>
+    </div>
+  </div>

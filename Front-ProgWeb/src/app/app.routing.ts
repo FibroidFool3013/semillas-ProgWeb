@@ -10,6 +10,9 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CheckoutComponent} from './components/checkout/checkout.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +22,10 @@ const routes: Routes =[
     { path: 'register',           component: RegisterComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: 'contact-us',      component: ContactUsComponent }
+    { path: 'contact-us',      component: ContactUsComponent },
+    { path: 'shop',      component: ShopComponent },
+    { path: 'detail',      component: ProductDetailComponent },
+    { path: 'checkout',      component: CheckoutComponent }
 ];
 
 @NgModule({

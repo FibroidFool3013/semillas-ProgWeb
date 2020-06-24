@@ -1,0 +1,28 @@
+
+<div class="my-5 col-md-offset-6" >
+    <div class="section section-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <button type="button" class="btn btn-outline-warning btn-round" [routerLink]="['/shop']">
+                        <i _ngcontent-c10="" class="nc-icon nc-minimal-left"></i>
+                        Back
+                    </button> 
+                    <img class="img" src="{{ product.imagen }}" alt="">
+                </div>
+                <div class="col-md-5">
+                    <h1>{{ product.nombreProducto }}</h1>
+                    <br>
+                    <h4 style="color: #f5593d;">{{ product.precio | currency }}</h4>
+                    <br>
+                    <h4>{{ product.descripcion }}</h4>
+                    <br>
+                    <add-to-cart [item]="item" [custom]="true">
+                        <button type="button" class="btn btn-outline-danger btn-round" (click)="agregarAlCarrito()">Agregar al carrito</button>
+                     </add-to-cart>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
