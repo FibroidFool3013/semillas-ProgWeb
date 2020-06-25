@@ -1,59 +1,57 @@
-<div class="wrapper">
-    <div class="page-header" style="background-image: url('./assets/img/fondo-registro.jpg');">
-        <div class="filter"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
-                      <div class="card card-register">
-                          <h3 class="title">Regístro</h3>
-                          <div class="social-line text-center">
-                              <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
-                                  <i class="fa fa-facebook-square"></i>
-                              </a>
-                              <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
-                                  <i class="fa fa-google-plus"></i>
-                              </a>
-                              <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
-                                  <i class="fa fa-twitter"></i>
-                              </a>
-                          </div>
-                          <form class="register-form">
-                            <label>Nombre</label>
-                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="nc-icon nc-single-02"></i>
-                                </span>
-                              </div>
+<section id="register" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
 
-                                <input type="text" class="form-control" placeholder="Nombre" (focus)="focus=true" (blur)="focus=false" >
-                            </div>
-
-                              <label>Email</label>
-                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                      <i class="nc-icon nc-email-85"></i>
-                                  </span>
-                                </div>
-
-                                  <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" >
-                              </div>
-
-                              <label>Password</label>
-                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                      <i class="nc-icon nc-key-25"></i>
-                                  </span>
-                                </div>
-                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" >
-                              </div>
-                              <button class="btn btn-danger btn-block btn-round">Crear cuenta</button>
-                          </form>
-                      </div>
-                    </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formRegister="ngForm" (ngSubmit)="onRegister(formRegister)">
+                <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="isError">
+                  {{msgError}}
                 </div>
+                <div class="form-group">
+                  <input type="text" #name="ngModel" name="name" class="form-control" placeholder="Name" [(ngModel)]="user.nombre" required minlength="4"
+                    maxlength="15">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+                  <div *ngIf="name.errors.required">Name is required</div>
+                  <div *ngIf="name.errors.minlength">Name must be at least 4 characters</div>
+                </div>
+                <div class="form-group">
+                  <input type="text" #name="ngModel" name="apellido" class="form-control" placeholder="Apellido" [(ngModel)]="user.apellido" required minlength="4"
+                    maxlength="15">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+                  <div *ngIf="name.errors.required">Apellido is required</div>
+                  <div *ngIf="name.errors.minlength">Name must be at least 4 characters</div>
+                </div>
+                <div class="form-group">
+                  <input type="email" #email="ngModel" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" required
+                    minlength="8">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.minlength">Email must be at least 8 characters</div>
+                </div>
+                <div class="form-group">
+                  <input type="password" #password="ngModel" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"
+                    required minlength="5" maxlength="10">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">Password must be at least 5 characters</div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+                <div class="form-group">
+                  <a routerLink="/signup" class="form-control login-user">Do you have account?</a>
+                </div>
+              </form>
             </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
